@@ -11,57 +11,53 @@ function hs() { echo ' '; }
 
 [$n, $q] = ia();
 
-function moveForward($initial, $target, $collision) {
+function moveForward($position, $target, $collision) {
     global $n;
-    $tmp = $initial;
     $cnt = 0;
-
     while (1) {
-        if ($tmp === $collision) {
+        if ($position === $collision) {
             return [
                 false,
                 null,
                 null,
             ];
         }
-        if ($tmp === $target) {
+        if ($position === $target) {
             return [
                 true,
-                $tmp,
+                $position,
                 $cnt,
             ];
         }
         
-        $tmp++;
+        $position++;
         $cnt++;
-        if ($tmp === $n) $tmp = 0;
+        if ($position === $n) $position = 0;
     }
 }
 
-function moveBackward($initial, $target, $collision) {
+function moveBackward($position, $target, $collision) {
     global $n;
-    $tmp = $initial;
     $cnt = 0;
-
     while (1) {
-        if ($tmp === $collision) {
+        if ($position === $collision) {
             return [
                 false,
                 null,
                 null,
             ];
         }
-        if ($tmp === $target) {
+        if ($position === $target) {
             return [
                 true,
-                $tmp,
+                $position,
                 $cnt,
             ];
         }
         
-        $tmp--;
+        $position--;
         $cnt++;
-        if ($tmp === -1) $tmp = $n - 1;
+        if ($position === -1) $position = $n - 1;
     }
 }
 
