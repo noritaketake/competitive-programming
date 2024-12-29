@@ -9,3 +9,20 @@ function no() { echo 'No', PHP_EOL;}
 function p($val) { echo $val, PHP_EOL; }
 function hs() { echo ' '; } // half space
 const EXPO_9 = 1000000000;
+
+[$a, $b, $c, $d, $e, $f] = ia();
+[$g, $h, $i, $j, $k, $l] = ia();
+
+function hasIntersection($l1, $r1, $l2, $r2) {
+    return !($r1 <= $l2 || $r2 <= $l1);
+}
+
+if (
+    hasIntersection($a, $d, $g, $j)
+    && hasIntersection($b, $e, $h, $k)
+    && hasIntersection($c, $f, $i, $l)
+) {
+    yes();
+} else {
+    no();
+}
