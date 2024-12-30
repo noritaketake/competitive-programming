@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 function s() { return trim(fgets(STDIN)); }
 function i() { return intval(s()); }
 function sa() { return explode(' ', trim(fgets(STDIN))); }
