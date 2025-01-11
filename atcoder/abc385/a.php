@@ -12,4 +12,12 @@ function p($val) { echo $val, PHP_EOL; }
 function hs() { echo ' '; } // half space
 const EXPO_9 = 1000000000;
 
+[$a, $b, $c] = ia();
 
+$ok = ($a === $b && $a === $c)
+    || $a + $b === $c
+    || $a + $c === $b
+    || $b + $c === $a;
+
+if ($ok) yes();
+else no();
