@@ -11,3 +11,16 @@ function no() { echo 'No', PHP_EOL;}
 function p($val) { echo $val, PHP_EOL; }
 function mid($l, $r) { return intval(floor(($l + $r) / 2)); } // for binary search
 const EXPO_9 = 1000_000_000;
+
+$n = i();
+$a = ia();
+
+$a2 = [];
+foreach ($a as $i => $val) {
+    $a2[] = [$i, $val];
+}
+usort($a2, function ($e1, $e2) {
+    return $e1[1] <=> $e2[1];
+});
+
+p($a2[count($a) - 2][0] + 1);
