@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 function s() { return trim(fgets(STDIN)); }
@@ -10,3 +11,28 @@ function no() { echo 'No', PHP_EOL;}
 function p($val) { echo $val, PHP_EOL; }
 function mid($l, $r) { return intval(floor(($l + $r) / 2)); } // for binary search
 const EXPO_9 = 1000_000_000;
+
+$n = i();
+$a = ia();
+
+$res = 0;
+for ($i = 0; $i < $n; $i++) {
+    $current = $a[$i];
+
+    // a[index] >= 2 * currentとなる最小のindexを求める
+    $l = -1;
+    $r = $n;
+    while ($r > $l + 1) {
+        $mid = mid($l, $r);
+
+        if ($a[$mid] >= 2 * $current) $r = $mid;
+        else $l = $mid;
+    }
+
+    // 存在しない場合は加算しない
+    if ($r === -1) continue;
+
+    $res += ($n - $r);
+}
+
+p($res);

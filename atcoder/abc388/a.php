@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 function s() { return trim(fgets(STDIN)); }
@@ -10,3 +11,6 @@ function no() { echo 'No', PHP_EOL;}
 function p($val) { echo $val, PHP_EOL; }
 function mid($l, $r) { return intval(floor(($l + $r) / 2)); } // for binary search
 const EXPO_9 = 1000_000_000;
+
+$s = s();
+p($s[0] . 'UPC');
